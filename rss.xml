@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Samplepress]]></title><description><![CDATA[Samplepress]]></description><link>http://simonkim.github.com</link><generator>NodeJS RSS Module</generator><lastBuildDate>Thu, 22 Nov 2012 05:39:01 GMT</lastBuildDate><atom:link href="http://simonkim.github.com/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[New Post Test]]></title><description><![CDATA[<img src="http://www.gravatar.com/avatar/c61841d546fbf600d8d906df8f220913?r=pg&s=48.jpg&d=identicon"><br/><p>write here!</p>]]></description><link>http://simonkim.github.com/post/new-post-test</link><guid isPermaLink="false">new-post-test</guid><dc:creator><![CDATA[<a href="" target="_blank">Simon Kim</a>]]></dc:creator><pubDate>Thu, 22 Nov 2012 04:58:00 GMT</pubDate></item><item><title><![CDATA[Setup progress so far]]></title><description><![CDATA[<img src="http://www.gravatar.com/avatar/c61841d546fbf600d8d906df8f220913?r=pg&s=48.jpg&d=identicon"><br/><h1 id="toc_9">Steps I&#39;ve followed so far</h1>
-
-<h2 id="toc_10">Downloading source code repository (git)</h2>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Samplepress]]></title><description><![CDATA[Samplepress]]></description><link>http://simonkim.github.com</link><generator>NodeJS RSS Module</generator><lastBuildDate>Thu, 22 Nov 2012 05:46:54 GMT</lastBuildDate><atom:link href="http://simonkim.github.com/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[New Post Test]]></title><description><![CDATA[<img src="http://www.gravatar.com/avatar/c61841d546fbf600d8d906df8f220913?r=pg&s=48.jpg&d=identicon"><br/><p>write here!</p>]]></description><link>http://simonkim.github.com/post/new-post-test</link><guid isPermaLink="false">new-post-test</guid><dc:creator><![CDATA[<a href="" target="_blank">Simon Kim</a>]]></dc:creator><pubDate>Thu, 22 Nov 2012 04:58:00 GMT</pubDate></item><item><title><![CDATA[Setup progress so far]]></title><description><![CDATA[<img src="http://www.gravatar.com/avatar/c61841d546fbf600d8d906df8f220913?r=pg&s=48.jpg&d=identicon"><br/><h1 id="toc_13">Steps I&#39;ve followed so far ...</h1>
+<pre><code class="code">Note: This article <span class="keyword">is</span> only <span class="keyword">to</span> list up what I<span class="attribute">'ve</span> faced during initial setup <span class="keyword">of</span> a Haroopress blog <span class="keyword">on</span> my github.com repository/page including <span class="keyword">all</span> the mistakes <span class="keyword">and</span> puzzles. So, please do <span class="keyword">not</span> take this as a step-by-step tutorial <span class="keyword">for</span> setting a Haroopress blog. However, I<span class="attribute">'ll</span> summerize what you need <span class="keyword">to</span> be aware/prepared before getting started <span class="keyword">with</span> this setup <span class="keyword">to</span> avoid issues I<span class="attribute">'ve</span> faced here.
+</code></pre>
+<h2 id="toc_14">Downloading source code repository (git)</h2>
 <pre><code class="bash"><span class="variable">$ </span>git clone git<span class="variable">@github</span>.com<span class="symbol">:rhiokim</span>/haroopress.git samplepress
 </code></pre>
-<h2 id="toc_11">Initialization</h2>
+<h2 id="toc_15">Initialization</h2>
 <pre><code class="bash"><span class="variable">$ </span>make init
-</code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing ./bin/setup.js that has the first line #!/usr/bin/env node followed by a hidden CR(<sup>M</sup> in vi, or \r). Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue (for Mac OS X, <a href="https://help.github.com/articles/dealing-with-line-endings">https://help.github.com/articles/dealing-with-line-endings</a>), and cloned the Haroopress repository again.</p><pre><code class="code"><span class="variable">$ </span>git config --global core.autocrlf input
+</code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing ./bin/setup.js that has the first line #!/usr/bin/env node followed by a hidden CR(<sup>M</sup> in vi, or \r). Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue (for Mac OS X, <a href="https://help.github.com/articles/dealing-with-line-endings">https://help.github.com/articles/dealing-with-line-endings</a>), and cloned the Haroopress repository again.</p><pre><code class="bash"><span class="variable">$ </span>git config --global core.autocrlf input
 <span class="variable">$ </span>git clone git<span class="variable">@github</span>.com<span class="symbol">:rhiokim</span>/haroopress.git samplepress
+<span class="variable">$ </span>make init
 </code></pre>
-<h2 id="toc_12">Blog setup</h2>
-<p>At the end of <code>make init</code> phase, it asked me a few questions and some of them are hard to figure out for me:</p><pre><code class="code">haroo> Insert site url <span class="comment">(*) "http://www.myblog.com"
+<h2 id="toc_16">Blog setup</h2>
+<p>At the end of <code>make init</code> phase, it asked me a few questions and some of them are hard to figure out for me:</p>
+<h3 id="toc_17">Site URL</h3>
+<pre><code class="code">haroo> Insert site url <span class="comment">(*) "http://www.myblog.com"
  > http://www.kaoma.net/samplepress
-</code></pre><p>I have no idea what to give here because it&#39;s not yet clear how the static pages will be deployed to the destination URL. I gave just a random URL that I can actually create on my web server and not yet occupied and will see if I can have another chance to change it later.</p>]]></description><link>http://simonkim.github.com/post/setup-progress-so-far</link><guid isPermaLink="false">setup-progress-so-far</guid><dc:creator><![CDATA[<a href="" target="_blank">Simon Kim</a>]]></dc:creator><pubDate>Thu, 22 Nov 2012 03:34:00 GMT</pubDate></item><item><title><![CDATA[Welcome to haroopress]]></title><description><![CDATA[<img src="http://www.gravatar.com/avatar/a8618a255192bd842fdd62d099776735?r=pg&s=48.jpg&d=identicon"><br/><h3 id="toc_20">환영합니다.</h3>
+</code></pre><p>I have no idea what to give here because it&#39;s not yet clear how the static pages will be deployed to the destination URL. I gave just a random URL that I can actually create on my web server and not yet occupied and will see if I can have another chance to change it later.</p>]]></description><link>http://simonkim.github.com/post/setup-progress-so-far</link><guid isPermaLink="false">setup-progress-so-far</guid><dc:creator><![CDATA[<a href="" target="_blank">Simon Kim</a>]]></dc:creator><pubDate>Thu, 22 Nov 2012 03:34:00 GMT</pubDate></item><item><title><![CDATA[Welcome to haroopress]]></title><description><![CDATA[<img src="http://www.gravatar.com/avatar/a8618a255192bd842fdd62d099776735?r=pg&s=48.jpg&d=identicon"><br/><h3 id="toc_25">환영합니다.</h3>
 
 <ul>
 <li>Welcome</li>
@@ -26,9 +30,9 @@
 <li>добро пожаловать</li>
 </ul>
 
-<h3 id="toc_21">Intro</h3>
+<h3 id="toc_26">Intro</h3>
 <p>하루프레스는 하루의 이야기를 블로깅하기 위한 정적 페이지 블로그 엔진입니다.</p>
-<h3 id="toc_22">Haroopress?</h3>
+<h3 id="toc_27">Haroopress?</h3>
 
 <ul>
 <li><a href="http://haroopress.com/about/">하루프레스?</a></li>
@@ -37,7 +41,7 @@
 <li><a href="http://haroopress.com/diary">하루프레스 개발 다이어리</a></li>
 </ul>
 
-<h3 id="toc_23">Usage</h3>
+<h3 id="toc_28">Usage</h3>
 
 <ul>
 <li><a href="http://haroopress.com/post/haroopress-install-guide-movie/">5분만에 설치하는 하루프레스 동영상</a></li>
@@ -48,7 +52,7 @@
 <li><a href="http://haroopress.com/post/harupeureseu-hwangyeongseoljeong-hagi/">하루프레스 환경설정 하기</a></li>
 </ul>
 
-<h3 id="toc_24">History</h3>
+<h3 id="toc_29">History</h3>
 
 <ul>
 <li><a href="https://github.com/rhiokim/haroopress/wiki/Change-History">변경 이력</a></li>
