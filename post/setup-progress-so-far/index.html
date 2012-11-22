@@ -160,10 +160,8 @@
 
                         <div class="markdown-wrapper">
                             <h1 id="toc_0">Steps I&#39;ve followed so far</h1>
-<p>Downloading source code repository (git)
-...bash
-$ git clone <a href="mailto:git@github.com">git@github.com</a>:rhiokim/haroopress.git samplepress
-...</p><p>Initialization
+<p>Downloading source code repository (git)</p><pre><code class="bash"><span class="variable">$ </span>git clone git<span class="variable">@github</span>.com<span class="symbol">:rhiokim</span>/haroopress.git samplepress
+</code></pre><p>Initialization
 $ make init</p><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing ./bin/setup.js that has the first line #!/usr/bin/env node followed by a hidden LF(<sup>M</sup> in vi). Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue</p><p>Blog setup
 At the end of <code>make init</code> phase, it asked me a few questions and some of them are hard to figure out for me:</p><p>haroo&gt; Insert site url (*) &quot;<a href="http://www.myblog.com">http://www.myblog.com</a>&quot;</p>
 <blockquote>
