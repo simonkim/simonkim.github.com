@@ -126,6 +126,11 @@
         <li class="nav-header">Recent Articles</li>
     
         <li>
+            <a href="/post/before-setting-up-your-own-haroopress-blog" target="_blank">Before setting up your own Haroopress blog
+            <span class="label">Simon Kim</span></a>
+        </li>
+    
+        <li>
             <a href="/post/new-post-test" target="_blank">New Post Test
             <span class="label">Simon Kim</span></a>
         </li>
@@ -159,32 +164,32 @@
                                             
 
                         <div class="markdown-wrapper">
-                            <h1 id="toc_0">Steps I&#39;ve followed so far ...</h1>
+                            <h1 id="toc_7">Steps I&#39;ve followed so far ...</h1>
 <pre><code class="code">Note: This article <span class="keyword">is</span> only <span class="keyword">to</span> list up what I<span class="attribute">'ve</span> faced during initial setup <span class="keyword">of</span> a Haroopress blog <span class="keyword">on</span> my github.com repository/page including <span class="keyword">all</span> the mistakes <span class="keyword">and</span> puzzles. So, please do <span class="keyword">not</span> take this as a step-by-step tutorial <span class="keyword">for</span> setting a Haroopress blog. However, I<span class="attribute">'ll</span> summerize what you need <span class="keyword">to</span> be aware/prepared before getting started <span class="keyword">with</span> this setup <span class="keyword">to</span> avoid issues I<span class="attribute">'ve</span> faced here.
 </code></pre>
-<h2 id="toc_1">Downloading source code repository (git)</h2>
+<h2 id="toc_8">Downloading source code repository (git)</h2>
 <pre><code class="bash"><span class="variable">$ </span>git clone git<span class="variable">@github</span>.com<span class="symbol">:rhiokim</span>/haroopress.git samplepress
 </code></pre>
-<h2 id="toc_2">Initialization</h2>
+<h2 id="toc_9">Initialization</h2>
 <pre><code class="bash"><span class="variable">$ </span>make init
 </code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing <code>./bin/setup.js</code> that has the first line <code>#!/usr/bin/env node</code> followed by a hidden CR(<sup>M</sup> in vi, or \r). 
 Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue (for Mac OS X, <a href="https://help.github.com/articles/dealing-with-line-endings">https://help.github.com/articles/dealing-with-line-endings</a>), and cloned the Haroopress repository again.</p><pre><code class="bash"><span class="variable">$ </span>git config --global core.autocrlf input
 <span class="variable">$ </span>git clone git<span class="variable">@github</span>.com<span class="symbol">:rhiokim</span>/haroopress.git samplepress
 <span class="variable">$ </span>make init
 </code></pre>
-<h2 id="toc_3">Blog setup</h2>
+<h2 id="toc_10">Blog setup</h2>
 <p>At the end of <code>make init</code> phase, it asked me a few questions and some of them are hard to figure out for me:</p>
-<h3 id="toc_4">Site URL</h3>
+<h3 id="toc_11">Site URL</h3>
 <pre><code class="code">haroo> Insert site url <span class="comment">(*) "http://www.myblog.com"
  > http://www.kaoma.net/samplepress
 </code></pre><p>I have no idea what to give here because it&#39;s not yet clear how the static pages will be deployed to the destination URL. I gave just a random URL that I can actually create on my web server and not yet occupied and will see if I can have another chance to change it later.</p><p>EDIT: I&#39;m not sure if there is any other option, but since I&#39;ve decided to rely on what Haroopress suggests by default, deploying to <a href="https://github.com/simonkim/simonkin.github.com">https://github.com/simonkim/simonkin.github.com</a> repository, My site url has become <a href="http://simonkim.github.com">http://simonkim.github.com</a> by entering:</p><pre><code class="code">haroo> Insert site url <span class="comment">(*) "http://www.myblog.com"
  > http://simonkim.github.com
 </code></pre>
-<h3 id="toc_5">Gravatar e-mail address</h3>
+<h3 id="toc_12">Gravatar e-mail address</h3>
 <pre><code class="code">haroo> Insert you gravatar emaill address <span class="comment">(*) "abc123@gmail.com"
  > spamhere@kaoma.net
 </code></pre><p>Well, if you&#39;ve never heard of gravatar, it&#39;s time for you to go <a href="http://gravatar.com">http://gravatar.com</a> and create one and then you can come back here and give it the associated e-mail address.</p>
-<h3 id="toc_6">Github repository and page for the blog site</h3>
+<h3 id="toc_13">Github repository and page for the blog site</h3>
 <pre><code class="code">haroo> Enter the <span class="keyword">read</span>/<span class="keyword">write</span> repository <span class="keyword">for</span> your haroopress site 
 <span class="string">"git<span class="variable">@github</span>.com:[github-id]/[github-id].github.com.git"</span>
  > git<span class="variable">@github</span>.com:simonkim/simonkim.github.com.git
@@ -197,26 +202,26 @@ Anyhow, changing core.autocrlf to <code>input</code> and starting over from git 
 <p>Therefore, you should put <a href="http://yourid.github.com">http://yourid.github.com</a> to site url where I&#39;ve put <a href="http://www.kaoma.net/samplepress">http://www.kaoma.net/samplepress</a>, which is wrong. To do this correctly, it should be like this:</p><pre><code class="code">haroo> Insert site url <span class="comment">(*) "http://www.myblog.com"
  > http://yourid.github.com
 </code></pre>
-<h2 id="toc_7">Generating static pages</h2>
+<h2 id="toc_14">Generating static pages</h2>
 <p>$ make gen</p><p>Indeed, this command generage quite a lot of files under the directory that I have cloned the git repository to. Seems like generating default pages most of Haroopress powered sites should have?</p>
-<h2 id="toc_8">Creating the first post</h2>
+<h2 id="toc_15">Creating the first post</h2>
 <p>$ make new-post</p><p>This command also asks you some easy questions such as title, category, tags for the new article and tells you markdown file that you can start writing the actual content text.</p><p>cd ./bin;./new-post.js
 haroo&gt; Input article title : Setup progress so far
 haroo&gt; Input article category : Haroopress
 haroo&gt; Input article tag (e.g tag1, tag2, tag3) : haroopress, setup, install
 haroo&gt; write post -&gt; .../samplepress/source/data/articles/setup-progress-so-far/index.markdown
 haroo&gt; article&#39;s image path .../samplepress/source/data/articles/setup-progress-so-far/@img</p><p>@img is a subdirectory you can put some image files and referenced from index.markdown somehow.</p>
-<h2 id="toc_9">Deploying</h2>
+<h2 id="toc_16">Deploying</h2>
 <pre><code class="code">Note: Before deploying, it is required to re-generate <span class="tag">&lt;<span class="title">code</span>></span>make gen<span class="tag">&lt;/<span class="title">code</span>></span> to reflect the changes you've just made: <span class="tag">&lt;<span class="title">code</span>></span> make new-post <span class="tag">&lt;/<span class="title">code</span>></span>
 </code></pre>
-<h3 id="toc_10">Re-generate</h3>
+<h3 id="toc_17">Re-generate</h3>
 <pre><code class="code"><span class="variable">$ </span>make gen
 </code></pre>
-<h3 id="toc_11">Deploy!</h3>
+<h3 id="toc_18">Deploy!</h3>
 <pre><code class="code"><span class="variable">$ </span>make deploy
 </code></pre><pre><code class="code">Note: At this step, Haroopress engine, or <span class="tag">&lt;<span class="title">code</span>></span> make deploy <span class="tag">&lt;/<span class="title">code</span>></span> command, tries to push all the generated static pages at <span class="tag">&lt;<span class="title">code</span>></span> make gen <span class="tag">&lt;/<span class="title">code</span>></span> phase to the github repository you specified at <span class="tag">&lt;<span class="title">code</span>></span> make init <span class="tag">&lt;/<span class="title">code</span>></span> phase. The only issue I've faced was failing to perform <span class="tag">&lt;<span class="title">code</span>></span> git push origin master --force <span class="tag">&lt;/<span class="title">code</span>></span> due to a wrong address and SSH configuration for github.com.
 </code></pre><p>Deply phase seems worked fine. So I went to <a href="http://simonkim.github.com">http://simonkim.github.com</a> but, ... where is my post? it shows only a blank and default Haroopress generated texts and links. What happend?</p>
-<h1 id="toc_12">Publish, not drafg</h1>
+<h1 id="toc_19">Publish, not drafg</h1>
 <p>When you first perform <code> make new-post </code> it will tell you where to start editing, <code> <i>some_path</i>index.markdown </code> and the content of the file would be like this:</p><pre><code class="code">{
     <span class="string">"title"</span>: <span class="string">"Setup progress so far"</span>,
     <span class="string">"author"</span>: <span class="string">"Simon Kim"</span>,
@@ -238,7 +243,7 @@ haroo&gt; article&#39;s image path .../samplepress/source/data/articles/setup-pr
 }
 <span class="keyword">...</span>
 </code></pre><p>Before <code> make gen </code>, if you are sure to publish your new posting, please make sure the value for &quot;status&quot; key is <em class="label "><strong>&quot;publish&quot;</strong></em>, not <del>&quot;draft&quot;</del> by editing this file manually. I&#39;m not sure if there is a command for doing this or this manual editing is the only way but this is what I could find so far.</p>
-<h1 id="toc_13">Now I&#39;m here</h1>
+<h1 id="toc_20">Now I&#39;m here</h1>
 <p>To figure out how to deploy this amazingly simple blog and the first posting to a web space, <del>hopefully <a href="http://www.kaoma.net/samplepress">http://www.kaoma.net/samplepress</a></del>, at <a href="http://simonkim.github.com">http://simonkim.github.com</a></p><p><del>And Markdown syntax as well...<del></p><p>Some markdown syntax is applied to this article as you can see.</p>
                         </div>
                         <hr />

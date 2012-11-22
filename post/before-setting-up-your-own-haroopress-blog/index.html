@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to haroopress |  Samplepress</title>
+    <title>Before setting up your own Haroopress blog |  Samplepress</title>
     <meta name="description" content="Samplepress">
     <meta name="author" content="Simon Kim">
     <meta name="keywords" content="Haroopress,blog" />
@@ -82,29 +82,29 @@
                     <ul class="thumbnails">
                         <li>
                             <a class="thumbnail">
-                                <img src="http://www.gravatar.com/avatar/a8618a255192bd842fdd62d099776735?r=pg&amp;s=128.jpg&amp;d=identicon" />
+                                <img src="http://www.gravatar.com/avatar/c61841d546fbf600d8d906df8f220913?r=pg&amp;s=128.jpg&amp;d=identicon" />
                             </a>
                         </li>
                     </ul>
                     <p>
-                        <strong>haroopress</strong><br/>
-                        blog: <a href="http://haroopress.com" target="_blank">http://haroopress.com</a><br/>
-                        twitter: <a href="http://twitter.com/haroopress" target="_blank">@haroopress</a><br/>
-                        github: <a href="https://github.com/haroopress" target="_blank">haroopress</a>
+                        <strong>Simon Kim</strong><br/>
+                        blog: <a href="http://www.kaoma.net/samplepress" target="_blank">http://www.kaoma.net/samplepress</a><br/>
+                        twitter: <a href="http://twitter.com/" target="_blank">@</a><br/>
+                        github: <a href="https://github.com/" target="_blank"></a>
                     </p>
                     <p>
-                        <a href="https://twitter.com/haroopress" class="twitter-follow-button" data-show-count="true">Follow @haroopress</a>
+                        <a href="https://twitter.com/" class="twitter-follow-button" data-show-count="true">Follow @</a>
                         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                     </p>
                     <p>
-                        <p>저는 정적 페이지를 생성해내는 엔진입니다. </p>
+                        <p><strong>Please! edit your profile</strong></p>
                     </p>
                 </div>
                 <div>
                     <h3>About this Article</h3>
                     <p>
                         <h5>Date Released:</h5>
-                        <span>Tuesday, February 21 2012 9:00 AM</span>
+                        <span>Thursday, November 22 2012 3:01 PM</span>
                     </p>
                 </div>
             </div>
@@ -153,9 +153,9 @@
             <div class="row">
                 <div class="span9">
                     <div class="well bg">
-                        <div class="pull-right bookmark"></div>
+                        
                         <div class="page-header">
-                            <h1>Welcome to haroopress</h1>
+                            <h1>Before setting up your own Haroopress blog</h1>
                         </div>
 
                         
@@ -164,71 +164,60 @@
                                             
 
                         <div class="markdown-wrapper">
-                            <h3 id="toc_26">환영합니다.</h3>
+                            <h1 id="toc_0">How it works - for user&#39;s perspective</h1>
+
+<h2 id="toc_1">Introduction</h2>
+<p>The first step is to download a <em class="label "><strong>thing</strong></em> called Haroopress. It in form of bunch of files and stored at a github.com repository and you can reach it at <a href="https://github.com/rhiokim/haroopress">https://github.com/rhiokim/haroopress</a>.</p><p>There is a Quick Installation guide, written in Korean :(, at <a href="http://haroopress.com/post/haroopress-quick-guide/">http://haroopress.com/post/haroopress-quick-guide/</a> that you can follow through from downloading the <em class="label "><strong>thing</strong></em> to initial commands you would execute to publish the first set of static web pages to a web space (actually, it is a github&#39;s page) as well as the system requirement you need to fulfill.</p>
+<h2 id="toc_2">So, how it works?</h2>
+<p>Once you have your copy of <em class="label "><strong>Haroopress</strong></em> in your local computer,</p>
+<ul>
+<li>It allows you to 
 
 <ul>
-<li>Welcome</li>
-<li>歡迎</li>
-<li>bienvenida</li>
-<li>accueil</li>
-<li>willkommen</li>
-<li>ようこそ</li>
-<li>välkommet</li>
-<li>grata</li>
-<li>добро пожаловать</li>
+<li>Setup the remote repository at github.com of your account</li>
+<li>Add articles, categories, images as <em>**source</em>* of your blog</li>
+<li>Based on the <em class="label "><strong>source</strong></em>, generate <em class="label "><strong>static pages</strong></em> such as .html and .css files. These are still in your local computer</li>
+<li>Deploy the <em class="label "><strong>generated static pages</strong></em> to your github.com repository so anonymous Internet users can view your cool blog composed of only static web pages, which means they don&#39;t require any server-side scripting/processing</li>
+<li>Any changes, addition to your <em class="label "><strong>source</strong></em> you would make timely, can be re-generated and deployed to the remote repository, or github.com page of yours over and over again, using the same sequence of commands: <code> make gen; make deploy </code></li>
+</ul></li>
 </ul>
 
-<h3 id="toc_27">Intro</h3>
-<p>하루프레스는 하루의 이야기를 블로깅하기 위한 정적 페이지 블로그 엔진입니다.</p>
-<h3 id="toc_28">Haroopress?</h3>
+<h2 id="toc_3">In order to make this works</h2>
+<pre><code class="code">This information <span class="keyword">is</span> only <span class="keyword">for</span> quick/crash start of Haroopress setup. Once yo<span class="string">u've understood what'</span>s going on through the whole cycle, you can think of where <span class="keyword">and</span> how to setup your blog such <span class="keyword">as</span> Dropbox <span class="keyword">or</span> your own web server <span class="keyword">and</span> address.
+</code></pre><p>You need to be aware of some items/points and give some of these to <em class="label "><strong>Haroopress</strong></em> setup in your local computer, mostly during <code> make init </code> phase. These include:</p>
+<ul>
+<li>Github.com account. For example: <code>yourid</code>
 
 <ul>
-<li><a href="http://haroopress.com/about/">하루프레스?</a></li>
-<li><a href="http://haroopress.com/slides/">하루프레스 웹 프리젠테이션</a></li>
-<li><a href="http://haroopress.com/book/">하루프레스 eBook</a></li>
-<li><a href="http://haroopress.com/diary">하루프레스 개발 다이어리</a></li>
-</ul>
-
-<h3 id="toc_29">Usage</h3>
+<li>Now you will see there is your own Github.com space at <a href="http://github.com/yourid">http://github.com/yourid</a>, if it was your first time using Github.com. The more you understand Github.com, the easier your life with <em class="label "><strong>Haroopress</strong></em></li>
+</ul></li>
+<li>Github.com repository and it&#39;s page in a very special rule:
 
 <ul>
-<li><a href="http://haroopress.com/post/haroopress-install-guide-movie/">5분만에 설치하는 하루프레스 동영상</a></li>
-<li><a href="http://haroopress.com/post/haroopress-quick-guide/">하루프레스 퀵 가이드</a></li>
-<li><a href="http://haroopress.com/post/haroopress-posting-guide/">하루프레스 포스팅 가이드</a></li>
-<li><a href="http://haroopress.com/post/haroopress-default-data-format/">하루프레스 기본 데이터 규약</a></li>
-<li><a href="http://haroopress.com/post/haroopress-update-my-profile/">하루프레스 저작자 프로파일 수정하기</a></li>
-<li><a href="http://haroopress.com/post/harupeureseu-hwangyeongseoljeong-hagi/">하루프레스 환경설정 하기</a></li>
-</ul>
-
-<h3 id="toc_30">History</h3>
+<li>Normally, if you give <code> myrepo </code> as the name of repository, <a href="mailto:git@github.com">git@github.com</a>:yourid/myrepo is the address for the repository. However, to make your life easier, <em class="label "><strong>Haroopress</strong></em> seems has defined the rule for the repository name to deploy the blog static pages, along with Github.com</li>
+<li>Repository name <code>yourid.github.com </code>. please note that you have to enter <code>.github.com</code> following <code>yourid</code> at the <code>Repository name</code> field in <a href="https://github.com/new">https://github.com/new</a>
+-- THIS IS VERY IMPORTANT</li>
+</ul></li>
+<li>Github.com Page address associated with the account/repository
 
 <ul>
-<li><a href="https://github.com/rhiokim/haroopress/wiki/Change-History">변경 이력</a></li>
+<li>In order to get the Page address, you have to explicitly request for generating a GitHub Page for the given repository by clicking <em class="label "><strong>Automatic Page Generator</strong></em> button in the Admin page (<a href="https://github.com/simonkim/simonkim.github.com/admin">https://github.com/simonkim/simonkim.github.com/admin</a>)</li>
+<li>In 10 min, you will get,</li>
+<li><a href="http://yourid.github.com">http://yourid.github.com</a></li>
+</ul></li>
+<li>Your e-mail address associated to a Gravatar.com account</li>
 </ul>
-
-<h3 id="toc_31">Roadmap</h3>
-
-<ul>
-<li><a href="http://haroopress.com/post/harupeureseu-gaebal-rodeumaeb/">로드맵</a></li>
-</ul>
-
-<h3 id="toc_32">Contributors</h3>
-
-<ul>
-<li><a href="http://twitter.com/rhiokim">@rhiokim</a></li>
-<li><a href="http://twitter.com/fantalon">@fantalon</a></li>
-</ul>
-
+<p>Now you are ready to give answers to questions pop-up from <code>make init</code> phase of <em class="label "><strong>Haroopress</strong></em> setup. Go ahead and enjoy <em class="label "><strong>Haroopress</strong></em> starting with Quick Installation Guide at <a href="http://haroopress.com/post/haroopress-quick-guide/">http://haroopress.com/post/haroopress-quick-guide/</a></p>
                         </div>
                         <hr />
                                             
                         <div class="row-fluid">
                             
-
-                            
-                            <div class="pull-left">
-                                <a href="/post/setup-progress-so-far" class="btn btn-info"><i class="icon-white icon-chevron-left"></i> Setup progress so far</a>
+                            <div class="pull-right">
+                                <a href="/post/new-post-test" class="btn btn-info">New Post Test <i class="icon-white icon-chevron-right"></i></a>
                             </div>
+                            
+
                             
                         </div>
                     
@@ -260,6 +249,12 @@
     <!--<div class="row">-->
         <!--<div class="offset3 span9">-->
             <!--<strong>tags</strong> :-->
+            <!---->
+            <!--<a href="/tag/Haroopress">Haroopress</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/blog">blog</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/install">install</a>&nbsp;-->
             <!---->
         <!--</div>-->
     <!--</div>-->
