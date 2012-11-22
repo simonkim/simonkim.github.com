@@ -227,7 +227,7 @@ haroo&gt; article&#39;s image path .../samplepress/source/data/articles/setup-pr
 <pre><code class="bash"><span class="variable">$ </span>make deploy
 </code></pre><pre><code class="code">Note: At this step, Haroopress engine, or <span class="tag">&lt;<span class="title">code</span>></span> make deploy <span class="tag">&lt;/<span class="title">code</span>></span> command, tries to push all the generated static pages at <span class="tag">&lt;<span class="title">code</span>></span> make gen <span class="tag">&lt;/<span class="title">code</span>></span> phase to the github repository you specified at <span class="tag">&lt;<span class="title">code</span>></span> make init <span class="tag">&lt;/<span class="title">code</span>></span> phase. The only issue I've faced was failing to perform <span class="tag">&lt;<span class="title">code</span>></span> git push origin master --force <span class="tag">&lt;/<span class="title">code</span>></span> due to a wrong address and SSH configuration for github.com.
 </code></pre><p>Deply phase seems worked fine. So I went to <a href="http://simonkim.github.com">http://simonkim.github.com</a> but, ... where is my post? it shows only a blank and default Haroopress generated texts and links. What happend?</p>
-<h1 id="toc_23">Publish, not drafg</h1>
+<h1 id="toc_23">Publish, not draft</h1>
 <p>When you first perform <code> make new-post </code> it will tell you where to start editing, <code> <i>some_path</i>index.markdown </code> and the content of the file would be like this:</p><pre><code class="code">{
     <span class="string">"title"</span>: <span class="string">"Setup progress so far"</span>,
     <span class="string">"author"</span>: <span class="string">"Simon Kim"</span>,
