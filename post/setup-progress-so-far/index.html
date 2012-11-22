@@ -207,9 +207,11 @@ Anyhow, changing core.autocrlf to <code>input</code> and starting over from git 
  > http://yourid.github.com
 </code></pre>
 <h2 id="toc_18">Generating static pages</h2>
-<p>$ make gen</p><p>Indeed, this command generage quite a lot of files under the directory that I have cloned the git repository to. Seems like generating default pages most of Haroopress powered sites should have?</p>
+<pre><code class="bash"><span class="variable">$ </span>make gen
+</code></pre><p>Indeed, this command generage quite a lot of files under the directory that I have cloned the git repository to. Seems like generating default pages most of Haroopress powered sites should have?</p>
 <h2 id="toc_19">Creating the first post</h2>
-<p>$ make new-post</p><p>This command also asks you some easy questions such as title, category, tags for the new article and tells you markdown file that you can start writing the actual content text.</p><p>cd ./bin;./new-post.js
+<pre><code class="bash">$ <span class="built_in">make</span> <span class="built_in">new</span>-post
+</code></pre><p>This command also asks you some easy questions such as title, category, tags for the new article and tells you markdown file that you can start writing the actual content text.</p><p>cd ./bin;./new-post.js
 haroo&gt; Input article title : Setup progress so far
 haroo&gt; Input article category : Haroopress
 haroo&gt; Input article tag (e.g tag1, tag2, tag3) : haroopress, setup, install
@@ -219,10 +221,10 @@ haroo&gt; article&#39;s image path .../samplepress/source/data/articles/setup-pr
 <pre><code class="code">Note: Before deploying, it is required to re-generate <span class="tag">&lt;<span class="title">code</span>></span>make gen<span class="tag">&lt;/<span class="title">code</span>></span> to reflect the changes you've just made: <span class="tag">&lt;<span class="title">code</span>></span> make new-post <span class="tag">&lt;/<span class="title">code</span>></span>
 </code></pre>
 <h3 id="toc_21">Re-generate</h3>
-<pre><code class="code"><span class="variable">$ </span>make gen
+<pre><code class="bash"><span class="variable">$ </span>make gen
 </code></pre>
 <h3 id="toc_22">Deploy!</h3>
-<pre><code class="code"><span class="variable">$ </span>make deploy
+<pre><code class="bash"><span class="variable">$ </span>make deploy
 </code></pre><pre><code class="code">Note: At this step, Haroopress engine, or <span class="tag">&lt;<span class="title">code</span>></span> make deploy <span class="tag">&lt;/<span class="title">code</span>></span> command, tries to push all the generated static pages at <span class="tag">&lt;<span class="title">code</span>></span> make gen <span class="tag">&lt;/<span class="title">code</span>></span> phase to the github repository you specified at <span class="tag">&lt;<span class="title">code</span>></span> make init <span class="tag">&lt;/<span class="title">code</span>></span> phase. The only issue I've faced was failing to perform <span class="tag">&lt;<span class="title">code</span>></span> git push origin master --force <span class="tag">&lt;/<span class="title">code</span>></span> due to a wrong address and SSH configuration for github.com.
 </code></pre><p>Deply phase seems worked fine. So I went to <a href="http://simonkim.github.com">http://simonkim.github.com</a> but, ... where is my post? it shows only a blank and default Haroopress generated texts and links. What happend?</p>
 <h1 id="toc_23">Publish, not drafg</h1>
