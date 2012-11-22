@@ -204,15 +204,17 @@
                     </ul>
                 </div>
                 <div class="markdown-wrapper">
-                    <h1 id="toc_8">Steps I&#39;ve followed so far</h1>
+                    <h1 id="toc_9">Steps I&#39;ve followed so far</h1>
 
-<h2 id="toc_9">Downloading source code repository (git)</h2>
+<h2 id="toc_10">Downloading source code repository (git)</h2>
 <pre><code class="bash"><span class="variable">$ </span>git clone git<span class="variable">@github</span>.com<span class="symbol">:rhiokim</span>/haroopress.git samplepress
 </code></pre>
-<h2 id="toc_10">Initialization</h2>
+<h2 id="toc_11">Initialization</h2>
 <pre><code class="bash"><span class="variable">$ </span>make init
-</code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing ./bin/setup.js that has the first line #!/usr/bin/env node followed by a hidden LF(<sup>M</sup> in vi). Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue</p>
-<h2 id="toc_11">Blog setup</h2>
+</code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing ./bin/setup.js that has the first line #!/usr/bin/env node followed by a hidden CR(<sup>M</sup> in vi, or \r). Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue (for Mac OS X, <a href="https://help.github.com/articles/dealing-with-line-endings">https://help.github.com/articles/dealing-with-line-endings</a>), and cloned the Haroopress repository again.</p><pre><code class="code"><span class="variable">$ </span>git config --global core.autocrlf input
+<span class="variable">$ </span>git clone git<span class="variable">@github</span>.com<span class="symbol">:rhiokim</span>/haroopress.git samplepress
+</code></pre>
+<h2 id="toc_12">Blog setup</h2>
 <p>At the end of <code>make init</code> phase, it asked me a few questions and some of them are hard to figure out for me:</p><pre><code class="code">haroo> Insert site url <span class="comment">(*) "http://www.myblog.com"
  > http://www.kaoma.net/samplepress
 </code></pre><p>I have no idea what to give here because it&#39;s not yet clear how the static pages will be deployed to the destination URL. I gave just a random URL that I can actually create on my web server and not yet occupied and will see if I can have another chance to change it later.</p>
@@ -238,7 +240,7 @@
                     </ul>
                 </div>
                 <div class="markdown-wrapper">
-                    <h3 id="toc_19">환영합니다.</h3>
+                    <h3 id="toc_20">환영합니다.</h3>
 
 <ul>
 <li>Welcome</li>
@@ -252,9 +254,9 @@
 <li>добро пожаловать</li>
 </ul>
 
-<h3 id="toc_20">Intro</h3>
+<h3 id="toc_21">Intro</h3>
 <p>하루프레스는 하루의 이야기를 블로깅하기 위한 정적 페이지 블로그 엔진입니다.</p>
-<h3 id="toc_21">Haroopress?</h3>
+<h3 id="toc_22">Haroopress?</h3>
 
 <ul>
 <li><a href="http://haroopress.com/about/">하루프레스?</a></li>
@@ -263,7 +265,7 @@
 <li><a href="http://haroopress.com/diary">하루프레스 개발 다이어리</a></li>
 </ul>
 
-<h3 id="toc_22">Usage</h3>
+<h3 id="toc_23">Usage</h3>
 
 <ul>
 <li><a href="http://haroopress.com/post/haroopress-install-guide-movie/">5분만에 설치하는 하루프레스 동영상</a></li>
@@ -274,7 +276,7 @@
 <li><a href="http://haroopress.com/post/harupeureseu-hwangyeongseoljeong-hagi/">하루프레스 환경설정 하기</a></li>
 </ul>
 
-<h3 id="toc_23">History</h3>
+<h3 id="toc_24">History</h3>
 
 <ul>
 <li><a href="https://github.com/rhiokim/haroopress/wiki/Change-History">변경 이력</a></li>

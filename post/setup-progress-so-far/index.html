@@ -166,7 +166,9 @@
 </code></pre>
 <h2 id="toc_2">Initialization</h2>
 <pre><code class="bash"><span class="variable">$ </span>make init
-</code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing ./bin/setup.js that has the first line #!/usr/bin/env node followed by a hidden LF(<sup>M</sup> in vi). Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue</p>
+</code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing ./bin/setup.js that has the first line #!/usr/bin/env node followed by a hidden CR(<sup>M</sup> in vi, or \r). Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue (for Mac OS X, <a href="https://help.github.com/articles/dealing-with-line-endings">https://help.github.com/articles/dealing-with-line-endings</a>), and cloned the Haroopress repository again.</p><pre><code class="code"><span class="variable">$ </span>git config --global core.autocrlf input
+<span class="variable">$ </span>git clone git<span class="variable">@github</span>.com<span class="symbol">:rhiokim</span>/haroopress.git samplepress
+</code></pre>
 <h2 id="toc_3">Blog setup</h2>
 <p>At the end of <code>make init</code> phase, it asked me a few questions and some of them are hard to figure out for me:</p><pre><code class="code">haroo> Insert site url <span class="comment">(*) "http://www.myblog.com"
  > http://www.kaoma.net/samplepress
@@ -206,7 +208,10 @@ haroo&gt; article&#39;s image path .../samplepress/source/data/articles/setup-pr
 <h3 id="toc_7">Deploy!</h3>
 <pre><code class="code"><span class="variable">$ </span>make deploy
 </code></pre><pre><code class="code"><span class="attribute">Note</span>: <span class="string"></span>
-</code></pre><p>Next?</p><p>To figure out how to deploy this amazingly simple blog and the first posting to a web space, hopefully <a href="http://www.kaoma.net/samplepress">http://www.kaoma.net/samplepress</a></p><p>And Markdown syntax as well...</p>
+</code></pre>
+<h1 id="toc_8">Now I&#39;m here</h1>
+<p>To figure out how to deploy this amazingly simple blog and the first posting to a web space, <del>hopefully <a href="http://www.kaoma.net/samplepress">http://www.kaoma.net/samplepress</a></del>, at <a href="http://simonkim.github.com">http://simonkim.github.com</a></p><p><del>And Markdown syntax as well...<del>
+Some markdown syntax is applied to this article as you can see.</p>
                         </div>
                         <hr />
                                             
