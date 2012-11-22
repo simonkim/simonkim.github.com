@@ -212,7 +212,8 @@
 </code></pre>
 <h2 id="toc_15">Initialization</h2>
 <pre><code class="bash"><span class="variable">$ </span>make init
-</code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing ./bin/setup.js that has the first line #!/usr/bin/env node followed by a hidden CR(<sup>M</sup> in vi, or \r). Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue (for Mac OS X, <a href="https://help.github.com/articles/dealing-with-line-endings">https://help.github.com/articles/dealing-with-line-endings</a>), and cloned the Haroopress repository again.</p><pre><code class="bash"><span class="variable">$ </span>git config --global core.autocrlf input
+</code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing <code>./bin/setup.js</code> that has the first line <code>#!/usr/bin/env node</code> followed by a hidden CR(<sup>M</sup> in vi, or \r). 
+Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue (for Mac OS X, <a href="https://help.github.com/articles/dealing-with-line-endings">https://help.github.com/articles/dealing-with-line-endings</a>), and cloned the Haroopress repository again.</p><pre><code class="bash"><span class="variable">$ </span>git config --global core.autocrlf input
 <span class="variable">$ </span>git clone git<span class="variable">@github</span>.com<span class="symbol">:rhiokim</span>/haroopress.git samplepress
 <span class="variable">$ </span>make init
 </code></pre>

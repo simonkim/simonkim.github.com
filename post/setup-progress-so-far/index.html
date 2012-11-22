@@ -167,7 +167,8 @@
 </code></pre>
 <h2 id="toc_2">Initialization</h2>
 <pre><code class="bash"><span class="variable">$ </span>make init
-</code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing ./bin/setup.js that has the first line #!/usr/bin/env node followed by a hidden CR(<sup>M</sup> in vi, or \r). Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue (for Mac OS X, <a href="https://help.github.com/articles/dealing-with-line-endings">https://help.github.com/articles/dealing-with-line-endings</a>), and cloned the Haroopress repository again.</p><pre><code class="bash"><span class="variable">$ </span>git config --global core.autocrlf input
+</code></pre><p>Note: My git global configuration core.autocrlf was set to <code>true</code>. I guess this was the reason <code>make init</code> failed to complete due to failure of executing <code>./bin/setup.js</code> that has the first line <code>#!/usr/bin/env node</code> followed by a hidden CR(<sup>M</sup> in vi, or \r). 
+Anyhow, changing core.autocrlf to <code>input</code> and starting over from git cloning fixed this issue (for Mac OS X, <a href="https://help.github.com/articles/dealing-with-line-endings">https://help.github.com/articles/dealing-with-line-endings</a>), and cloned the Haroopress repository again.</p><pre><code class="bash"><span class="variable">$ </span>git config --global core.autocrlf input
 <span class="variable">$ </span>git clone git<span class="variable">@github</span>.com<span class="symbol">:rhiokim</span>/haroopress.git samplepress
 <span class="variable">$ </span>make init
 </code></pre>
@@ -213,7 +214,7 @@ haroo&gt; article&#39;s image path .../samplepress/source/data/articles/setup-pr
 </code></pre>
 <h3 id="toc_11">Deploy!</h3>
 <pre><code class="code"><span class="variable">$ </span>make deploy
-</code></pre><pre><code class="code"><span class="attribute">Note</span>: <span class="string"></span>
+</code></pre><pre><code class="code">Note: At this step, Haroopress engine, or <span class="tag">&lt;<span class="title">code</span>></span> make deploy <span class="tag">&lt;/<span class="title">code</span>></span> command, tries to push all the generated static pages at <span class="tag">&lt;<span class="title">code</span>></span> make gen <span class="tag">&lt;/<span class="title">code</span>></span> phase to the github repository you specified at <span class="tag">&lt;<span class="title">code</span>></span> make init <span class="tag">&lt;/<span class="title">code</span>></span> phase. The only issue I've faced was failing to perform <span class="tag">&lt;<span class="title">code</span>></span> git push origin master --force <span class="tag">&lt;/<span class="title">code</span>></span> due to a wrong address and SSH configuration for github.com.
 </code></pre>
 <h1 id="toc_12">Now I&#39;m here</h1>
 <p>To figure out how to deploy this amazingly simple blog and the first posting to a web space, <del>hopefully <a href="http://www.kaoma.net/samplepress">http://www.kaoma.net/samplepress</a></del>, at <a href="http://simonkim.github.com">http://simonkim.github.com</a></p><p><del>And Markdown syntax as well...<del></p><p>Some markdown syntax is applied to this article as you can see.</p>
